@@ -1,0 +1,377 @@
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Rubik', sans-serif;
+  }
+.danger{
+    background: #E22C2C;
+}
+  @media (min-width: 1200px) {
+      .container {
+          max-width: 1320px !important;
+      }
+  }
+
+  a:hover {
+      text-decoration: none !important;
+  }
+
+  body {
+      overflow-x: hidden;
+      background: #FAFAFA !important;
+  }
+
+  .head {
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .header-contact {
+      align-items: center;
+  }
+
+  .header-contact div {
+      display: flex;
+      align-items: center;
+      padding: 0 !important;
+      justify-content: center;
+  }
+
+  .header-contact div i {
+      margin: 0 0.5rem 0 0.75rem;
+  }
+
+  .dropdown p,
+  .header-contact p {
+      margin-bottom: 0 !important;
+  }
+
+  .dropdown {
+      display: flex;
+      position: relative;
+      cursor: pointer;
+      align-items: center;
+  }
+
+  .dropdown i {
+      margin-left: .4rem;
+      transition: all .4s;
+  }
+
+  .tr {
+      position: relative;
+      z-index: 2;
+  }
+
+  .en {
+      position: absolute;
+      top: -1.5rem;
+      transition: all .4s;
+      visibility: hidden;
+      z-index: -1;
+      padding: .5rem;
+      left: -7px;
+  }
+
+  .dropdown:hover .en {
+      visibility: visible;
+      top: 1.5rem;
+      z-index: 1;
+  }
+
+  .dropdown:hover i {
+      rotate: 180deg;
+  }
+
+  .lang {
+      max-width: 35px;
+      margin: 0 !important;
+  }
+
+  .menu {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  .menu-items {
+      list-style: none;
+      display: flex;
+      margin: 0;
+  }
+
+  .menu-item a {
+      color: white !important;
+  }
+
+  .menu-item {
+      padding: 2rem 0 2rem 0;
+      margin-left: 2rem;
+      transition: all .4s;
+      max-height: 88px;
+  }
+
+  .menu-item:hover {
+      border-bottom: 1px solid white;
+  }
+
+  .burger {
+      display: none;
+  }
+
+  .burger div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      margin: 5px;
+      transition: all 0.5s ease;
+  }
+
+  .slideritem {
+      position: relative;
+  }
+
+  .slideritem img {
+      width: 100%;
+      object-fit: cover;
+  }
+
+  .overlay {
+      position: absolute;
+      width: 100%;
+      min-height: 100%;
+      background: #000000d1;
+      z-index: 1;
+      top: 0;
+      display: flex;
+      align-items: center;
+
+  }
+
+  .header {
+      max-width: 550px;
+  }
+
+  .contact-us button {
+      padding: 0.5rem 1.25rem;
+  }
+
+  .overlay .content {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .slider-content {
+      justify-content: space-between;
+      display: flex;
+  }
+
+  .social {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+
+  .social div {
+      padding: 0.25rem 0.5rem;
+      border: 1px solid white;
+      border-radius: 100%;
+      text-align: center;
+  }
+
+  .slider-section {
+      overflow: hidden;
+  }
+
+  .rectangle {
+      height: 3px;
+      width: 23px;
+      transition: all .4s;
+      background-color: rgba(255, 255, 255, .4);
+  }
+
+
+  li.slick-active {
+      width: 50px !important;
+  }
+
+  .slick-active .rectangle {
+      width: 50px;
+      background-color: rgba(255, 255, 255, 1);
+  }
+
+  .slider-section .slick-dots {
+      position: relative !important;
+      top: -5rem !important;
+      text-align: start !important;
+      max-width: 1140px;
+      bottom: 0rem !important;
+      margin: 0 auto !important;
+  }
+  .product{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    row-gap: 2rem;
+    column-gap: 3rem;
+  }
+  .product-card {
+      text-align: center;
+      background: #FFF;
+      border: 1px solid rgba(0, 0, 0, 0.247);
+      border-radius: 10px;
+      padding: 1rem 0;
+      transition: all .4s;
+  }  
+  .product-card i{
+   visibility: hidden;
+  } .product-card:hover i{
+    visibility: visible;
+  }
+  .product-card a{
+    color: black;
+  } .product-card:hover{
+    background:#E22C2C;
+  }
+  .product-card:hover a{
+    color: #FFF;
+  }
+.all{
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+}
+.all button{
+    padding: .5rem 1rem;
+}
+.back{
+position: relative;
+background-image: url('images/truck-crane-lifts-load-construction-site-against-background-sky.png');
+background-attachment: fixed;
+background-repeat: no-repeat;
+height: 400px;
+background-size: cover;
+background-position: bottom;
+}
+.back .content{
+    max-width: 400px;
+}
+.slide{
+    position: absolute;
+    max-width: 400px;
+    width: 100%;
+    height: 150px;
+    right: 0;
+}.overlay .d-flex  img{
+ position: absolute;
+ left: 0;
+}
+  @media only screen and (max-width: 768px) {
+      nav {
+          justify-content: space-between;
+          padding: 0 5vw;
+      }
+
+      .nav-links {
+          position: absolute;
+          top: 8vh;
+          min-height: 92vh;
+          background: #343a40 !important;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 50%;
+          margin: 0;
+          padding: 0;
+          right: -22rem;
+          transition: All 0.5s ease-in;
+      }
+
+      .nav-links a,
+      .nav-links i {
+          opacity: 0;
+
+      }
+
+      .burger {
+          display: block;
+      }
+
+  }
+
+  @media only screen and (max-width: 640px) {
+      nav {
+          justify-content: space-between;
+          padding: 0 5vw;
+      }
+  }
+
+  .nav-active {
+      right: 0;
+      visibility: visible;
+  }
+
+  @media only screen and (max-width: 460px) {
+      .nav-links {
+          width: 100%;
+          transition: All 0.5s ease;
+      }
+  }
+
+  .nav-active {
+      transform: translateX(0);
+  }
+
+  @keyframes navLinkFade {
+      from {
+          opacity: 0;
+          transform: translateX(50px);
+      }
+
+      to {
+          opacity: 1;
+          transform: translateX(0);
+      }
+  }
+
+  .toggle .line1 {
+      transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .toggle .line2 {
+      opacity: 0;
+  }
+
+  .toggle .line3 {
+      transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  @media only screen and (max-width:992px) {
+      .header-contact {
+          min-width: 320px;
+      }
+
+      .header-contact div {
+          padding: 0 !important;
+      }
+  }
+
+  @media only screen and (max-width:576px) {
+      .head {
+          max-width: 480px;
+      }
+  }
+
+  @media only screen and (max-width:480px) {
+      .head {
+          max-width: 320px;
+      }
+
+      .header-contact {
+          flex-direction: column;
+          align-items: start;
+      }
+  }
