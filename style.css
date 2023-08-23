@@ -38,10 +38,6 @@
       overflow: visible !important;
   }
 
-  nav {
-      /* overflow: visible; */
-  }
-
   .head {
       justify-content: space-between;
       align-items: center;
