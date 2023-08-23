@@ -1,39 +1,84 @@
+$(':checkbox').change(noscroll);
+function noscroll() {
+    $('body').toggleClass('no-scroll', !$(':checkbox').prop('checked'));
 
-const navSlide = () => {
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector(".nav-links");
-  const navLinks = document.querySelectorAll(".nav-links a, .nav-links i");
+    setTimeout(function () {
+        $('.burger-menu').toggleClass('hidden', !$(':checkbox').prop('unchecked'));
+    }, 500);
+}
 
-  burger.addEventListener("click", () => {
-    nav.classList.toggle("nav-active");
 
-    navLinks.forEach((link, index) => {
-      if (link.style.animation) {
-        link.style.animation = "";
-      } else {
-        link.style.animation = `navLinkFade 0.5s ease forwards ${
-          index / 7 + 0.5
-        }s `;
-      }
-    });
-    burger.classList.toggle("toggle");
-  });
-  
-};
 
-navSlide();
+var body = document.getElementsByTagName("body")[0]
 
+function showSearch() {
+    var searchBox = document.getElementById("search-box");
+
+    searchBox.style.transform = "translate(0)";
+    body.style.overflow = "hidden"
+}
+
+function hideSearch() {
+    var searchBox = document.getElementById("search-box");
+    searchBox.style.transform = "translate(150%)";
+    body.style.overflowY = "scroll"
+}
 
 $('.slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    dots:true,
+    dots: true,
     customPaging: function (slider, i) {
 
         return "<div class='rectangle'></div>";
-    
-      },
-      arrows:false,
+
+    },
+    arrows: false,
+});
+$('.autoplay').slick({
+    slidesToShow: 8,
+    slidesToScroll: 1,
+    autoplaySpeed: 0,
+    speed: 5000,
+    loop: true,
+    infinite: true,    
+    autoplay: true,
+    swipe: false,
+    cssEase: 'linear',
+    pauseOnHover: false,
+    dots: false,
+    arrows: false,
+    responsive: [{}, {
+        breakpoint: 1200,
+        settings: {
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            infinite: true
+        }
+    }, {
+        breakpoint: 768,
+        settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+
+        }
+    },
+    {
+        breakpoint: 576,
+        settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+
+        }
+    },
+    {
+        breakpoint: 480,
+        settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+
+        }
+    }]
 });

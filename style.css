@@ -6,22 +6,40 @@
       box-sizing: border-box;
       font-family: 'Rubik', sans-serif;
   }
-.danger{
-    background: #E22C2C;
-}
+
+  .danger {
+      background: #E22C2C;
+  }
+
   @media (min-width: 1200px) {
-      .container {
+
+      .container,
+      .slider-section .slick-dots {
           max-width: 1320px !important;
       }
   }
+
+
 
   a:hover {
       text-decoration: none !important;
   }
 
   body {
-      overflow-x: hidden;
       background: #FAFAFA !important;
+  }
+
+  body.no-scroll {
+      overflow-y: scroll;
+      overflow-x: hidden;
+  }
+
+  .burger-menu.hidden {
+      overflow: visible !important;
+  }
+
+  nav {
+      /* overflow: visible; */
   }
 
   .head {
@@ -79,7 +97,7 @@
   .dropdown:hover .en {
       visibility: visible;
       top: 1.5rem;
-      z-index: 1;
+      z-index: 99;
   }
 
   .dropdown:hover i {
@@ -118,16 +136,140 @@
       border-bottom: 1px solid white;
   }
 
-  .burger {
+  .burger-menu {
+      padding: .5rem 0 .5rem 0;
+      height: 40px;
       display: none;
+      background: #343a40;
+      position: relative;
   }
 
-  .burger div {
-      width: 25px;
-      height: 3px;
-      background: #fff;
-      margin: 5px;
-      transition: all 0.5s ease;
+  .menu-inventory {
+      padding-top: 3rem;
+      width: 100%;
+      height: 105vh;
+      transform: translate(150%);
+      transition: transform 0.5s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      z-index: 6;
+      margin-top: -4rem;
+  }
+
+  .menuitems a {
+      color: #B9B9B9;
+
+      display: inline-block;
+      position: relative;
+      padding: 1rem;
+  }
+
+  .menuitems a:hover {
+      color: #fff;
+  }
+
+  .search {
+      width: 100%;
+      height: 1080px;
+      top: 0;
+      position: fixed;
+      background: #000;
+      display: flex;
+      z-index: 99999;
+      align-items: center;
+      justify-content: center;
+      transform: translate(150%);
+      transition: all 1s;
+
+  }
+
+  .search input {
+      outline: none;
+      border: 0;
+      border-bottom: 1px solid #fff;
+      background: transparent;
+      color: white;
+      cursor: text;
+      margin-bottom: 15rem;
+  }
+
+  .search i {
+      position: absolute;
+      right: 3rem;
+      font-size: 3rem;
+      top: 3rem;
+
+  }
+
+  .menu-item .menuitems {
+      cursor: pointer;
+  }
+
+  .lines {
+      display: block;
+      height: 26px;
+      width: 32px;
+      position: absolute;
+      top: 7px;
+      bottom: 0;
+      right: 35px;
+      z-index: 7;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+
+  input[type="checkbox"] {
+      position: absolute;
+      display: block;
+      height: 32px;
+      width: 32px;
+      top: -3px;
+      right: 35px;
+      z-index: 8;
+      opacity: 0;
+      cursor: pointer;
+  }
+
+  .lines .line {
+      display: block;
+      height: 4px;
+      width: 100%;
+      border-radius: 10px;
+      background: rgb(255, 255, 255);
+  }
+
+  .lines .line1 {
+      transform-origin: 0% 0%;
+      transition: transform 0.4s ease-in-out;
+  }
+
+  .lines .line2 {
+      transition: transform 0.2s ease-in-out;
+  }
+
+  .lines .line3 {
+      transform-origin: 0% 100%;
+      transition: transform 0.4s ease-in-out;
+  }
+
+  input[type="checkbox"]:checked~.menu-inventory {
+      transform: translateX(0);
+  }
+
+  input[type="checkbox"]:checked~.lines .line1 {
+      transform: rotate(45deg);
+
+  }
+
+  input[type="checkbox"]:checked~.lines .line2 {
+      transform: scaleY(0);
+  }
+
+  input[type="checkbox"]:checked~.lines .line3 {
+      transform: rotate(-45deg);
   }
 
   .slideritem {
@@ -169,18 +311,32 @@
       display: flex;
   }
 
+  .social-container {
+      height: 100%;
+  }
+
   .social {
       color: white;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      top: 50%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      align-items: flex-end;
   }
 
-  .social div {
+  .social div a {
       padding: 0.25rem 0.5rem;
       border: 1px solid white;
       border-radius: 100%;
-      text-align: center;
+      margin: 0.45rem 0;
+      width: 50px;
+      display: flex;
+      height: 50px;
+      align-items: center;
+      justify-content: center;
   }
 
   .slider-section {
@@ -211,143 +367,418 @@
       max-width: 1140px;
       bottom: 0rem !important;
       margin: 0 auto !important;
+      max-width: 1320px;
   }
-  .product{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    row-gap: 2rem;
-    column-gap: 3rem;
+
+  .product {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      row-gap: 2rem;
+      column-gap: 2rem;
   }
-  .product-card {
+
+  .product-card,
+  .product-item {
       text-align: center;
       background: #FFF;
-      border: 1px solid rgba(0, 0, 0, 0.247);
+      border: 2px solid rgba(0, 0, 0, 0.247);
       border-radius: 10px;
       padding: 1rem 0;
       transition: all .4s;
-  }  
-  .product-card i{
-   visibility: hidden;
-  } .product-card:hover i{
-    visibility: visible;
-  }
-  .product-card a{
-    color: black;
-  } .product-card:hover{
-    background:#E22C2C;
-  }
-  .product-card:hover a{
-    color: #FFF;
-  }
-.all{
-    display: flex;
-    justify-content: center;
-    margin: 1rem auto;
-}
-.all button{
-    padding: .5rem 1rem;
-}
-.back{
-position: relative;
-background-image: url('images/truck-crane-lifts-load-construction-site-against-background-sky.png');
-background-attachment: fixed;
-background-repeat: no-repeat;
-height: 400px;
-background-size: cover;
-background-position: bottom;
-}
-.back .content{
-    max-width: 400px;
-}
-.slide{
-    position: absolute;
-    max-width: 400px;
-    width: 100%;
-    height: 150px;
-    right: 0;
-}.overlay .d-flex  img{
- position: absolute;
- left: 0;
-}
-  @media only screen and (max-width: 768px) {
-      nav {
-          justify-content: space-between;
-          padding: 0 5vw;
-      }
-
-      .nav-links {
-          position: absolute;
-          top: 8vh;
-          min-height: 92vh;
-          background: #343a40 !important;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 50%;
-          margin: 0;
-          padding: 0;
-          right: -22rem;
-          transition: All 0.5s ease-in;
-      }
-
-      .nav-links a,
-      .nav-links i {
-          opacity: 0;
-
-      }
-
-      .burger {
-          display: block;
-      }
-
   }
 
-  @media only screen and (max-width: 640px) {
-      nav {
-          justify-content: space-between;
-          padding: 0 5vw;
-      }
+  .product-card i {
+      visibility: hidden;
   }
 
-  .nav-active {
-      right: 0;
+  .product-card:hover i {
       visibility: visible;
   }
 
-  @media only screen and (max-width: 460px) {
-      .nav-links {
-          width: 100%;
-          transition: All 0.5s ease;
+  .product-card a,
+  .product-item a {
+      color: black;
+      display: block;
+      height: 100%;
+  }
+
+  .product-item a:hover {
+      color: #E22C2B;
+  }
+
+  .product-card:hover {
+      background: #E22C2C;
+  }
+
+  .product-item:hover {
+      border: 2px solid#E22C2B;
+
+  }
+
+  .product-card:hover a {
+      color: #FFF;
+  }
+
+  .all {
+      display: flex;
+      justify-content: center;
+      margin: 1rem auto;
+  }
+
+  button,
+  a.danger {
+      transition: all .7s;
+  }
+
+  .all button {
+      padding: .5rem 1rem;
+      border: 1px solid #E22C2C;
+  }
+
+  button.danger:hover,
+  a.danger:hover {
+      scale: 1.1;
+      box-shadow: inset 0 0 0 2em color(srgb 255 255 255), 0 0 20px 7px rgba(255, 0, 0, 1);
+
+
+      color: red !important;
+
+  }
+
+  .back {
+      position: relative;
+      background-image: url('images/truck-crane-lifts-load-construction-site-against-background-sky.png');
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      height: 400px;
+      background-size: cover;
+      background-position: bottom;
+  }
+
+  .back .content {
+      max-width: 400px;
+  }
+
+  .slide {
+      max-width: 400px;
+      width: 100%;
+      height: 200px;
+      position: absolute;
+      right: 0;
+  }
+
+  .overlay .container .d-flex {
+      align-items: center;
+  }
+
+  .overlay .container .slide img {
+      position: absolute;
+      right: 15rem;
+      z-index: 1;
+  }
+
+  hr.tiny-line {
+      border-top: 2px solid #E22C2C;
+      max-width: 40px;
+      margin: 1rem auto;
+  }
+
+  .new-item {
+
+      max-width: 645px;
+      width: 100%;
+      height: 320px;
+  }
+
+  .first-item {
+      background-image: url('images/yellow-forklift-working-construction-site.png');
+  }
+
+  .second-item {
+      background-image: url('images/closeup-helical-gears-car-automatic-transmission.png');
+  }
+
+  .new-item {
+      border-radius: 10px;
+      overflow: hidden;
+  }
+
+  .gradient-overlay {
+      background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding-left: 2rem;
+  }
+
+  .detail {
+      padding: 0.5rem .5rem;
+      border-radius: 5px;
+  }
+
+  .gradient-overlay .content {
+      max-width: 200px;
+  }
+
+  .back2 {
+      position: relative;
+      background-image: url('images/vehicle-coal-mine-view.png');
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      height: 400px;
+      background-size: cover;
+      background-position: bottom;
+  }
+
+  .back2 .overlay .container .slide img {
+      position: absolute;
+      right: 10rem;
+      z-index: 1;
+      bottom: 0;
+  }
+
+  .back2 .content {
+      max-width: 280px;
+  }
+
+  .date {
+      max-width: 112px;
+      width: 100%;
+      position: absolute;
+      bottom: 0.75rem;
+      left: 1rem;
+      padding: 0.25rem;
+      font-size: .75rem;
+  }
+
+  .last-blogs {
+      height: 450px;
+  }
+
+  .last-blogs .card-body {
+      overflow: hidden;
+      height: 10rem;
+      transition: all .4s;
+  }
+
+  .last-blogs .card-body p {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+  }
+
+  .card {
+      transition: all .4s;
+      cursor: pointer;
+  }
+
+  .card .btn {
+      transform: translateY(1000%);
+  }
+
+  .card:hover .btn {
+      transform: translateY(0);
+  }
+
+  .card:hover .card-body {
+      height: 15rem;
+  }
+
+  .card:hover {
+      border: 1px solid #E22C2B;
+  }
+
+  .dated-image {
+      position: relative;
+  }
+
+  a.danger {
+      background-color: rgb(226, 44, 44);
+      color: white;
+  }
+
+  .form-back {
+      position: relative;
+      background-image: url('images/truck-background.png');
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      height: 230px;
+      background-size: cover;
+      background-position: bottom;
+  }
+
+  .red-overlay {
+      position: absolute;
+      width: 100%;
+      min-height: 100%;
+      background: #e22c2ce8;
+      z-index: 1;
+      top: 0;
+      display: flex;
+      align-items: center;
+  }
+
+  .angle {
+      background: #000;
+      padding: 0 1rem;
+      font-size: 2rem;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+  }
+
+  .red-overlay .content.d-flex {
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .paragraph.text-light {
+      max-width: 340px;
+  }
+
+  .content input {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      padding: .5rem .5rem;
+      border: 0;
+  }
+
+  .content input:focus-visible {
+      outline: 0;
+  }
+
+  footer ul {
+      list-style: none;
+  }
+
+  footer,
+  footer a {
+      color: white;
+      transition: all .2s;
+  }
+
+  footer a {
+      font-size: .85rem;
+  }
+
+  footer a:hover {
+      color: gray;
+  }
+
+  footer h5 {
+      font-size: 1.75rem;
+  }
+
+  footer {
+      padding: 2rem 0 0 0;
+  }
+
+  .copyright {
+      background: #000;
+      padding: 1rem 0;
+  }
+
+  .copyright h6 {
+      font-size: .75rem;
+  }
+
+  .social2 {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 1rem;
+  }
+
+  .social2 span {
+      border: 1px solid white;
+      padding: 0.65rem 0.85rem;
+      border-radius: 100%;
+      text-align: center;
+  }
+
+  .social2 span i {
+      width: 1.5rem;
+      font-size: 1.5rem;
+      text-align: center;
+  }
+
+  .contact-banner {
+      background: url('images/Repeat\ Grid\ 1.png');
+      object-fit: cover;
+      width: 100%;
+      height: 400px;
+      background-position: center center;
+  }
+
+  .contact-banner .content {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 400px;
+  }
+
+  .contact-form .col-md-6.col-sm-6:last-child {
+      background: #FFFFFF;
+      border-radius: 10px;
+  }
+
+  .contact-form iframe {
+      border-radius: 10px;
+      max-width: 636px;
+      width: 100%;
+  }
+
+  .contact-form form {
+      margin: 2rem auto;
+  }
+
+  .contact-form form div input,
+  .contact-form form div textarea {
+      border-radius: 10px;
+      border: 1px solid black;
+      padding: .5rem 1rem;
+      width: 100%;
+      max-height: 162px;
+  }
+
+  .contact-form form div input.danger.text-light {
+      max-width: 160px;
+      border-radius: 5px;
+      border: 0;
+  }
+
+  .contact-form form div input:focus-visible {
+      border: 1px solid #E22C2B;
+      outline-color: #E22C2B;
+  }
+
+  .contact-form form {
+      row-gap: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      max-width: 550px;
+      max-height: 380px;
+  }
+
+  .autoplay img {
+      border: 2px solid #E6E6E6;
+      border-radius: 10px;
+      padding: 0.5rem 1.25rem;
+  }
+
+  @media only screen and (max-width:1200px) {
+      .product {
+
+          grid-template-columns: repeat(3, 1fr);
+      }
+
+      .social2 {
+          grid-template-columns: repeat(4, 1fr);
       }
   }
 
-  .nav-active {
-      transform: translateX(0);
-  }
 
-  @keyframes navLinkFade {
-      from {
-          opacity: 0;
-          transform: translateX(50px);
-      }
-
-      to {
-          opacity: 1;
-          transform: translateX(0);
-      }
-  }
-
-  .toggle .line1 {
-      transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .toggle .line2 {
-      opacity: 0;
-  }
-
-  .toggle .line3 {
-      transform: rotate(45deg) translate(-5px, -6px);
-  }
 
   @media only screen and (max-width:992px) {
       .header-contact {
@@ -357,11 +788,163 @@ background-position: bottom;
       .header-contact div {
           padding: 0 !important;
       }
+
+      .product {
+
+          grid-template-columns: repeat(2, 1fr);
+          row-gap: 1rem;
+          column-gap: 1rem;
+      }
+
+      .slide {
+          max-width: 300px;
+      }
+
+      .overlay .container .slide img {
+          right: 4rem !important;
+      }
+
+      .social2 span i {
+          width: 1rem;
+          font-size: 1rem;
+      }
+
+      .social2 span {
+          padding: 0.5rem 0.25rem;
+      }
   }
+
+
+  @media only screen and (max-width:840px) {
+      .slide {
+          display: none;
+      }
+
+      .overlay .container .d-flex {
+          justify-content: center;
+          text-align: center;
+      }
+
+      .back,
+      .back2 {
+          height: 300px;
+      }
+  }
+
+  @media only screen and (max-width:768px) {
+      nav.bg-dark>div {
+          display: none;
+      }
+
+      .burger-menu {
+          display: block;
+          overflow: hidden;
+
+      }
+
+      .slider-section .slick-dots {
+          top: -2rem !important;
+      }
+
+      .header-contact div {
+          justify-content: start;
+      }
+
+      .social2 {
+          grid-template-columns: repeat(4, 1fr);
+          justify-items: center;
+      }
+
+      .new-item {
+          margin: 1rem 0;
+      }
+
+      .last-blogs {
+          height: auto;
+      }
+
+      .last-blogs .card {
+          margin: 1rem 0;
+      }
+
+      .card .btn {
+          transform: translateY(0)
+      }
+
+      .last-blogs .card-body {
+          height: 15rem;
+      }
+
+      .overlay .container .slide img {
+          right: 0rem !important;
+      }
+
+      footer {
+          text-align: center;
+      }
+
+      footer .row div {
+          margin: 1rem 0;
+      }
+
+
+
+      .social2 span {
+          padding: 0.75rem 0.75rem;
+      }
+
+      .social2 span i {
+          width: 1.5rem;
+          font-size: 1.5rem;
+      }
+  }
+
+
 
   @media only screen and (max-width:576px) {
       .head {
           max-width: 480px;
+      }
+
+      .overlay .content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+      }
+
+      .product {
+
+          grid-template-columns: repeat(1, 1fr);
+      }
+
+      .red-overlay .content.d-flex {
+          flex-direction: column;
+      }
+
+      .paragraph.text-light {
+          max-width: none;
+      }
+
+      .header h1.text-light {
+          font-size: 1.5rem;
+      }
+
+      form .row {
+          row-gap: 2rem;
+      }
+
+      .contact-form form {
+          margin-bottom: 3rem;
+      }
+
+      .social {
+          top: 17%;
+      }
+
+      .social div a {
+          width: 40px;
+          height: 40px;
+
       }
   }
 
@@ -374,4 +957,96 @@ background-position: bottom;
           flex-direction: column;
           align-items: start;
       }
+
+      .social div a {
+          margin: .10rem 0;
+      }
+
+      .header-contact {
+          min-width: auto;
+      }
+
+      .slider-content {
+          max-width: 320px;
+      }
+
+      .social {
+          top: 15%;
+      }
+  }
+
+
+  @media only screen and (max-width:360px) {
+      .social div a {
+          width: 30px;
+          height: 30px;
+      }
+  }
+
+  @media only screen and (max-width:320px) {
+      .header h1.text-light {
+          font-size: 1rem;
+      }
+
+      .contact-us button {
+          padding: .25rem .5rem;
+      }
+
+      .slider-content {
+          max-width: 200px;
+      }
+  }
+
+
+
+  @media (min-width:576px) {
+      .slider-section .slick-dots {
+          max-width: 540px;
+      }
+
+      .social {
+          top: 18%;
+
+          right: 1rem;
+
+      }
+  }
+
+  @media only screen and (min-width: 650px) {
+      .social {
+          top: 18%;
+          right: 1rem;
+
+      }
+  }
+
+  @media (min-width:768px) {
+      .slider-section .slick-dots {
+          max-width: 720px;
+      }
+
+      .social {
+          top: 20%;
+          right: 1rem;
+      }
+  }
+
+
+
+
+  @media only screen and (min-width:800px) {
+      .social {
+          top: 28%;
+      }
+  }
+
+  @media (min-width:992px) {
+      .slider-section .slick-dots {
+          max-width: 960px;
+      }
+
+      .social {
+          top: 44%;
+      }
+
   }
