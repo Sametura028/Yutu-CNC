@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="TR">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+        integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="danger">
+        <div class="container">
+            <div class="head row text-light" style="margin: 0 auto">
+
+                <div class="header-contact row">
+                    <div class="phone  col-md-6"><i class="fa-light fa-phone"></i>
+                        <a href="tel:+05427322615" title="05427322615" class="text-light">05427322615</a>
+                    </div>
+                    <div class="mail  col-md-6"><i class="fa-sharp fa-light fa-envelope"></i>
+                        <a href="mailto:info@yutucnc.com" title="info@yutucnc.com"
+                            class="text-light">info@yutucnc.com</a>
+                    </div>
+
+                </div>
+
+                <div class="dropdown">
+                    <button class="btn danger text-light dropdown-toggle" data-bs-toggle="dropdown" type="button"
+                        id="dropdownMenuButton1" aria-expanded="false">
+                        TR
+                    </button>
+                    <ul class="dropdown-menu danger" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item text-light" style=" background: #E22C2C;" href="#">EN</a></li>
+
+                    </ul>
+                </div>
+            </div>
+    </header>
+    <nav class="bg-dark">
+        <div class="container">
+            <div class="d-flex menu">
+                <div class="logo">
+                    <a href="" title="Anasayfa"> <img src="images/yutu-logo-kırmızı.png" alt=" Logo"></a>
+                </div>
+                <ul class="menu-items nav-links">
+                    <li class="menu-item"><a href="" title="Anasafya">Anasafya</a></li>
+                    <li class="menu-item"><a href="" title="Hakkımızda">Hakkımızda</a></li>
+                    <li class="menu-item"><a href="" title="Ürünlerimiz">Ürünlerimiz</a></li>
+                    <li class="menu-item"><a href="" title="Blog">Blog</a></li>
+                    <li class="menu-item"><a href="" title="İletişim">İletişim</a></li>
+                    <li class="menu-item"><a href="#" onclick="showSearch()"><i
+                                class="fa-thin fa-magnifying-glass text-light"></i></a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+    </nav>
+    <nav class="burger-menu">
+        <div class="burger-container">
+            <input class="checkbox" type="checkbox" onclick='noscroll()' name="" id="" />
+            <div class="lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-inventory bg-dark">
+                <li class="menuitems"><a href="" title="Anasafya">Anasafya</a></li>
+                <li class="menuitems"><a href="" title="Hakkımızda">Hakkımızda</a></li>
+                <li class="menuitems"><a href="" title="Ürünlerimiz">Ürünlerimiz</a></li>
+                <li class="menuitems"><a href="" title="Blog">Blog</a></li>
+                <li class="menuitems"><a href="" title="İletişim">İletişim</a></li>
+                <li class="menuitems"><a href="#" onclick="showSearch()"><i
+                            class="fa-thin fa-magnifying-glass text-light"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="search-box" class="search">
+        <a href="#" onclick="hideSearch()"> <i class="fa-regular fa-xmark text-light"></i></a>
+        <div class="position-relative">
+            <input type="text" name="" id="" placeholder="Ara...">
+            <i class="fa-thin fa-magnifying-glass text-light"></i>
+        </div>
+    </div>
+
+    <section>
+        <div class="contact-banner">
+            <div class="container">
+                <div class="content d-flex">
+                    <h1 class="text-light">Blog</h1>
+                    <span><small class="text-danger">Ana Sayfa</small><small class="text-light"> >>
+                            Blog</small></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="mt-5">
+        <div class="container">
+            <div class="row blog-detail-row">
+                <div class="col-lg-9 col-md-8 col-sm-12 mb-5">
+                    <div class="blog-detail">
+                        <div class="blog-image position-relative">
+                            <img src="images/blog-image (2).png" class="w-100" alt="">
+                            <div class="date rounded danger text-center text-light">21.08.2023</div>
+                        </div>
+                        <h2 class="mt-5 ml-3">İş Makinaları Yedek Parça Fiyatları</h2>
+                        <div class="blog-content">
+                            <div class="paragraph">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste assumenda veritatis
+                                    laboriosam et beatae neque soluta, voluptates molestiae, incidunt expedita sit
+                                    veniam
+                                    praesentium in consectetur fugiat cumque nesciunt placeat voluptatum ad excepturi
+                                    voluptatem vitae quia officiis sunt. Accusamus eum quo optio modi cum illum qui
+                                    minus ea
+                                    fuga aperiam quisquam deserunt quos necessitatibus facilis eos laboriosam assumenda
+                                    dicta, ex eaque laborum. Aliquid tenetur illum nihil, consequatur exercitationem
+                                    maxime
+                                    doloribus. Officiis placeat voluptate tenetur magni, explicabo quos totam quas
+                                    perferendis libero nam nihil voluptas molestiae, error sunt non ratione quo
+                                    asperiores
+                                    ad alias excepturi? Saepe quo corporis, sed natus sapiente hic!</p>
+                                <div class="clear"></div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste assumenda veritatis
+                                    laboriosam et beatae neque soluta, voluptates molestiae, incidunt expedita sit
+                                    veniam
+                                    praesentium in consectetur fugiat cumque nesciunt placeat voluptatum ad excepturi
+                                    voluptatem vitae quia officiis sunt. Accusamus eum quo optio modi cum illum qui
+                                    minus ea
+                                    fuga aperiam quisquam deserunt quos necessitatibus facilis eos laboriosam assumenda
+                                    dicta, ex eaque laborum. Aliquid tenetur illum nihil, consequatur exercitationem
+                                    maxime
+                                    doloribus. Officiis placeat voluptate tenetur magni, explicabo quos totam quas
+                                    perferendis libero nam nihil voluptas molestiae, error sunt non ratione quo
+                                    asperiores
+                                    ad alias excepturi? Saepe quo corporis, sed natus sapiente hic!</p>
+                            </div>
+                            <div class="detail-images row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <img class="w-100" src="images/excavator2.png" alt="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <img class="w-100" src="images/excavator3.png" alt="">
+                                </div>
+                            </div>
+                            <div class="paragraph mt-5">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste assumenda veritatis
+                                    laboriosam et beatae neque soluta, voluptates molestiae, incidunt expedita sit
+                                    veniam
+                                    praesentium in consectetur fugiat cumque nesciunt placeat voluptatum ad excepturi
+                                    voluptatem vitae quia officiis sunt. Accusamus eum quo optio modi cum illum qui
+                                    minus ea
+                                    fuga aperiam quisquam deserunt quos necessitatibus facilis eos laboriosam assumenda
+                                    dicta, ex eaque laborum. Aliquid tenetur illum nihil, consequatur exercitationem
+                                    maxime
+                                    doloribus. Officiis placeat voluptate tenetur magni, explicabo quos totam quas
+                                    perferendis libero nam nihil voluptas molestiae, error sunt non ratione quo
+                                    asperiores
+                                    ad alias excepturi? Saepe quo corporis, sed natus sapiente hic!</p>
+                                <div class="clear"></div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste assumenda veritatis
+                                    laboriosam et beatae neque soluta, voluptates molestiae, incidunt expedita sit
+                                    veniam
+                                    praesentium in consectetur fugiat cumque nesciunt placeat voluptatum ad excepturi
+                                    voluptatem vitae quia officiis sunt. Accusamus eum quo optio modi cum illum qui
+                                    minus ea
+                                    fuga aperiam quisquam deserunt quos necessitatibus facilis eos laboriosam assumenda
+                                    dicta, ex eaque laborum. Aliquid tenetur illum nihil, consequatur exercitationem
+                                    maxime
+                                    doloribus. Officiis placeat voluptate tenetur magni, explicabo quos totam quas
+                                    perferendis libero nam nihil voluptas molestiae, error sunt non ratione quo
+                                    asperiores
+                                    ad alias excepturi? Saepe quo corporis, sed natus sapiente hic!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="categories">
+                        <h3 class="text-start">Kategoriler
+
+                        </h3>
+                        <ul>
+                            <li><a href="" class="text-dark">Lorem, ipsum dolor.</a></li>
+                            <li><a href="" class="text-dark">Quam, nisi odio.</a></li>
+                            <li><a href="" class="text-dark">Dolorum, tempora placeat.</a></li>
+                            <li><a href="" class="text-dark">Possimus, mollitia explicabo?</a></li>
+                            <li><a href="" class="text-dark">Nam, aut cum!</a></li>
+                            <li><a href="" class="text-dark">Sequi, delectus vero?</a></li>
+                            <li><a href="" class="text-dark">Explicabo, odio eius!</a></li>
+                            <li><a href="" class="text-dark">Saepe, ullam assumenda?</a></li>
+                            <li><a href="" class="text-dark">Impedit, libero at.</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="other-blogs">
+                <h3>Diğer bloglar</h3>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="card rounded"> <a href="#">
+                                <div class="dated-image"> <img class="card-img-top"
+                                        src="images/vehicle-coal-mine-viewCARD.png" alt="Card image cap">
+
+                                    <div class="date rounded danger text-center text-light">21.08.2023</div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">İş Makinası Yedek Parçaları</h5>
+                                    <p class="card-text">İş makinası yedek parçaları özellikle iş
+                                        makinelerine sağladıkları yarar açısından
+                                        önem arz eder. Bu makinelerin daha verimli
+                                        çalışmalarına devam edebilmeleri için
+                                        bakımlarının ve yedek parça değişimlerinin
+                                        titizlikle yapılması gerekir.</p>
+
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="card rounded"> <a href="#">
+                                <div class="dated-image"> <img class="card-img-top"
+                                        src="images/vehicle-coal-mine-viewCARD.png" alt="Card image cap">
+
+                                    <div class="date rounded danger text-center text-light">21.08.2023</div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">İş Makinası Yedek Parçaları</h5>
+                                    <p class="card-text">İş makinası yedek parçaları özellikle iş
+                                        makinelerine sağladıkları yarar açısından
+                                        önem arz eder. Bu makinelerin daha verimli
+                                        çalışmalarına devam edebilmeleri için
+                                        bakımlarının ve yedek parça değişimlerinin
+                                        titizlikle yapılması gerekir.</p>
+
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="card rounded"> <a href="#">
+                                <div class="dated-image"> <img class="card-img-top"
+                                        src="images/vehicle-coal-mine-viewCARD.png" alt="Card image cap">
+
+                                    <div class="date rounded danger text-center text-light">21.08.2023</div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">İş Makinası Yedek Parçaları</h5>
+                                    <p class="card-text">İş makinası yedek parçaları özellikle iş
+                                        makinelerine sağladıkları yarar açısından
+                                        önem arz eder. Bu makinelerin daha verimli
+                                        çalışmalarına devam edebilmeleri için
+                                        bakımlarının ve yedek parça değişimlerinin
+                                        titizlikle yapılması gerekir.</p>
+
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="mt-5">
+        <div class="form-back">
+            <div class="red-overlay">
+                <div class="container">
+                    <div class="content d-flex">
+                        <div class="paragraph text-light">
+                            <h4>E-Bülten Formu</h4>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis saepe iusto dolorum ipsam
+                                quis provident eum laborum explicabo nesciunt porro.</p>
+                        </div>
+                        <form>
+                            <div class="d-flex">
+                                <input type="text" name="" id="" placeholder="Email Adresiniz">
+                                <button class="angle  border-0"><i class="text-light fa fa-angle-right"
+                                        aria-hidden="true"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class=" col-md-4 col-sm-12">
+                    <ul>
+                        <li><a href="/"><img class="mb-4" src="images/yutu-logo-beyaz.png" alt=""></a> </li>
+                        <li>
+                            <p>Lorem Ipsum, kısaca Lipsum, masaüstü
+                                yayıncılık ve basın yayın sektöründe
+                                kullanılan taklit yazı bloğu olarak tanımlanır.
+                                Lipsum, oluşturulacak şablon ve taslaklarda
+                                içerik yerine geçerek yazı bloğunu
+                                doldurmak için kullanılır.</p>
+                        </li>
+                        <li>
+                            <div class="social2">
+                                <span><a href="" class="text-light"><i class="fa-brands fa-facebook-f"></i></a> </span>
+                                <span><a href="" class="text-light"><i class="fa-brands fa-instagram"></i></a></span>
+                                <span><a href="" class="text-light"><i class="fa-brands fa-linkedin-in"></i></a></span>
+                                <span><a href="mailto:nfo@yutucnc.com" class="text-light"><i
+                                            class="fa-light fa-envelope"></i></a></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-12">
+                    <ul>
+                        <li>
+                            <h5>Hızlı Linkler</h5>
+                        </li>
+                        <li><a href="/" title="Anasafya">AnaSayfa</a></li>
+                        <li><a href="/hakkimizda" title="Hakkımızda">Hakkımızda</a></li>
+                        <li><a href="/urunler" title="Ürünlerimiz">Ürünlerimiz</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/iletisim" title="İletişim"></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 col-sm-12">
+                    <ul>
+                        <li>
+                            <h5>Kategoriler</h5>
+                        </li>
+                        <li><a href="/">Difransiyel</a></li>
+                        <li><a href="/">Cer Aksanmı</a></li>
+                        <li><a href="/">Yürüyüş Taımlaarı</a></li>
+                        <li><a href="/">Kule Şanzıman</a></li>
+                        <li><a href="/">İş Makinası Şanzımanı</a></li>
+                        <li><a href="/">Hidrolik Grubu</a></li>
+                        <li><a href="/">Motor Grubu</a></li>
+                        <li><a href="/">Diğer Komatsu Ürünleri</a></li>
+                        <li><a href="/">Diğer Makina Parçaları</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <ul>
+                        <li>
+                            <h5>İletişim Bilgileri</h5>
+                        </li>
+                        <li><a href="/">Lorem Ipsum, kısaca Lipsum, masaüstü
+                                yayıncılık ve basın yayın sektöründe</a></li>
+                        <li><a href="/">0542 732 26 15</a></li>
+                        <li><a href="/">info@yutucnc.com</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <h6 class="text-center mb-0">© 2023 YUTU CNC Makine, Design By DigiMondi.</h6>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

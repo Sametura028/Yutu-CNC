@@ -31,9 +31,13 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</head>
+
+    <link href="
+    https://cdn.jsdelivr.net/npm/video.js@8.5.2/dist/video-js.min.css
+    " rel="stylesheet">
 
 <body>
+
 
 
     <header class="danger">
@@ -41,34 +45,33 @@
             <div class="head row text-light" style="margin: 0 auto">
 
                 <div class="header-contact row">
-                    <div class="phone  col-md-6"><i class="fa-solid fa-phone"></i>
-                        <p>05427322615</p>
+                    <div class="phone  col-md-6"><i class="fa-light fa-phone"></i>
+                        <a href="tel:+05427322615" title="05427322615" class="text-light">05427322615</a>
                     </div>
                     <div class="mail  col-md-6"><i class="fa-sharp fa-light fa-envelope"></i>
-                        <p>info@yutucnc.com</p>
+                        <a href="mailto:info@yutucnc.com" title="info@yutucnc.com"
+                            class="text-light">info@yutucnc.com</a>
                     </div>
 
                 </div>
 
-                <div class="lang">
-                    <div class="dropdown danger">
-                        <div class="tr">
-                            <a href="#" class="text-light">TR</a>
-                        </div><i class="fa-solid fa-angle-down"></i>
-                        <div class="en danger">
-                            <a href="#" class="text-light">EN</a>
-                        </div>
-                    </div>
+                <div class="dropdown">
+                    <button class="btn danger text-light dropdown-toggle" data-bs-toggle="dropdown" type="button"
+                        id="dropdownMenuButton1" aria-expanded="false">
+                        TR
+                    </button>
+                    <ul class="dropdown-menu danger" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item text-light" style=" background: #E22C2C;" href="#">EN</a></li>
 
+                    </ul>
                 </div>
             </div>
-        </div>
     </header>
     <nav class="bg-dark">
         <div class="container">
             <div class="d-flex menu">
                 <div class="logo">
-                    <a href="/" title="Anasayfa"> <img src="images/yutu-logo-kırmızı.png" alt=" Logo"></a>
+                    <a href="" title="Anasayfa"> <img src="images/yutu-logo-kırmızı.png" alt=" Logo"></a>
                 </div>
                 <ul class="menu-items nav-links">
                     <li class="menu-item"><a href="" title="Anasafya">Anasafya</a></li>
@@ -76,7 +79,8 @@
                     <li class="menu-item"><a href="" title="Ürünlerimiz">Ürünlerimiz</a></li>
                     <li class="menu-item"><a href="" title="Blog">Blog</a></li>
                     <li class="menu-item"><a href="" title="İletişim">İletişim</a></li>
-                    <li class="menu-item"><i class="fa-thin fa-magnifying-glass text-light"></i></li>
+                    <li class="menu-item"><a href="#" onclick="showSearch()"><i
+                                class="fa-thin fa-magnifying-glass text-light"></i></a></li>
                 </ul>
 
             </div>
@@ -84,9 +88,10 @@
 
 
     </nav>
+
     <nav class="burger-menu">
         <div class="burger-container">
-            <input class="checkbox" type="checkbox" onclick="noscroll(appTimes, $(this))" name="" id="" />
+            <input class="checkbox" type="checkbox" onclick='noscroll()' name="" id="" />
             <div class="lines">
                 <span class="line line1"></span>
                 <span class="line line2"></span>
@@ -98,30 +103,216 @@
                 <li class="menuitems"><a href="" title="Ürünlerimiz">Ürünlerimiz</a></li>
                 <li class="menuitems"><a href="" title="Blog">Blog</a></li>
                 <li class="menuitems"><a href="" title="İletişim">İletişim</a></li>
-                <li class="menuitems"><i class="fa-thin fa-magnifying-glass text-light"></i></li>
+                <li class="menuitems"><a href="#" onclick="showSearch()"><i
+                            class="fa-thin fa-magnifying-glass text-light"></i></a></li>
             </ul>
         </div>
     </nav>
-
+    <div id="search-box" class="search">
+        <a href="#" onclick="hideSearch()"> <i class="fa-regular fa-xmark text-light"></i></a>
+        <div class="position-relative">
+            <input type="text" name="" id="" placeholder="Ara...">
+            <i class="fa-thin fa-magnifying-glass text-light"></i>
+        </div>
+    </div>
 
     <section>
         <div class="contact-banner">
             <div class="container">
                 <div class="content d-flex">
-                    <h1 class="text-light">Hakkımızda</h1>
-                    <span><small class="text-danger">Ana Sayfa</small><small class="text-light"> >> Hakkımızda</small></span>
+                    <h1 class="text-light">İletişim</h1>
+                    <span><small class="text-danger">Ana Sayfa</small><small class="text-light"> >>
+                            Hakkımızda</small></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mt-5 mb-5 hakkimizda">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-12">
+                    <h3 class="mb-3">Biz Kimiz
+                        <hr class="tiny-line ml-0">
+                    </h3>
+                    <p>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.
+                        Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı
+                        oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri lorem
+                        endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca
+                        varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik
+                        dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset
+                        yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi
+                        Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile
+                        popüler olmuştur.</p>
+                </div>
+                <div class="col-lg-5 col-sm-12">
+                    <div class="position-relative back-red">
+                        <img class="w-100" src="images/hakkimizda.png" alt="">
+                        <div class="danger w-100 position-absolute"></div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="counter-section">
 
+        <div class="container">
+            <div class="counters">
+                <div class="item">
+                    <span class="counter" data-number="120">00</span>
+
+                    </i></span>
+                    <span class="heading">Lorem ipsun</span>
+                </div>
+
+                <div class="item">
+                    <span class="counter" data-number="2036">00</span>
+
+
+                    <span class="heading">Satılan Ürün</span>
+                </div>
+
+                <div class="item">
+                    <span class="counter" data-number="3012">000</span>
+
+                    <span class="heading">Geri Dönüş</span>
+                </div>
+
+                <div class="item">
+                    <span class="counter" data-number="234">00</span>
+
+                    <span class="heading">Lorem ipsun</span>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="mb-5">
+        <div class="back2">
+            <div class="overlay">
+                <div class="container">
+                    <div class="d-flex">
+                        <div class="content">
+                            <h2 class="text-light">
+                                <span class="text-danger">Hızlı Tedarik</span>
+                                Sorunsuz Teslimat
+                            </h2>
+                        </div>
+                        <div class="slide danger">
+                            <img src="images/pngwing2.com.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="video">
+        <div class="container position-relative">
+
+
+
+
+
+            <video id="my-player" class="video-js" controls preload="auto"
+                poster="video/yellow-forklift-working-construction-site.png" data-setup='{}'>
+                <source
+                    src="video/Obi-Wan Kenobi 2022 Final Scene - You didn't kill Anakin Skywalker, I did....mp4"" type="
+                    video/mp4">
+                </source>
+
+            </video>
+        </div>
+    </section>
+    <section>
+        <div class="container mb-3 mt-5">
+            <h3 class="text-center mb-3">İş Ortaklarımız
+                <hr class="tiny-line">
+            </h3>
+            <div class="autoplay">
+                <div>
+                    <img src="images/yutu-logo-kırmızı.png" alt="" />
+                </div>
+                <div>
+                    <img src="images/yutu-logo-kırmızı.png" alt="" />
+                </div>
+                <div>
+                    <img src="images/yutu-logo-kırmızı.png" alt="" />
+                </div>
+                <div>
+                    <img src="images/yutu-logo-kırmızı.png" alt="" />
+                </div>
+                <div>
+                    <img src="images/yutu-logo-kırmızı.png" alt="" />
+                </div>
+                <div>
+                    <img src="images/yutu-logo-kırmızı.png" alt="" />
+                </div>
+                <div>
+                    <img src="images/yutu-logo-kırmızı.png" alt="" />
+                </div>
+                <div>
+                    <img src="images/yutu-logo-kırmızı.png" alt="" />
+                </div>
+                <div>
+                    <img src="images/yutu-logo-kırmızı.png" alt="" />
+                </div>
+                <div>
+                    <img src="images/yutu-logo-kırmızı.png" alt="" />
+                </div>
+                <div>
+                    <img src="images/yutu-logo-kırmızı.png" alt="" />
+                </div>
+                <div>
+                    <img src="images/yutu-logo-kırmızı.png" alt="" />
+                </div>
+                <div>
+                    <img src="images/yutu-logo-kırmızı.png" alt="" />
+                </div>
+                <div>
+                    <img src="images/yutu-logo-kırmızı.png" alt="" />
+                </div>
+                <div>
+                    <img src="images/yutu-logo-kırmızı.png" alt="" />
+                </div>
+                <div>
+                    <img src="images/yutu-logo-kırmızı.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mt-5">
+        <div class="form-back">
+            <div class="red-overlay">
+                <div class="container">
+                    <div class="content d-flex">
+                        <div class="paragraph text-light">
+                            <h4>E-Bülten Formu</h4>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis saepe iusto dolorum ipsam
+                                quis provident eum laborum explicabo nesciunt porro.</p>
+                        </div>
+                        <form>
+                            <div class="d-flex">
+                                <input type="text" name="" id="" placeholder="Email Adresiniz">
+                                <button class="angle  border-0"><i class="text-light fa fa-angle-right"
+                                        aria-hidden="true"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer class="bg-dark">
         <div class="container">
             <div class="row">
                 <div class=" col-md-4 col-sm-12">
                     <ul>
-                        <li><img src="images/yutu-logo-beyaz.png" alt=""></li>
+                        <li><a href="/"><img class="mb-4" src="images/yutu-logo-beyaz.png" alt=""></a> </li>
                         <li>
                             <p>Lorem Ipsum, kısaca Lipsum, masaüstü
                                 yayıncılık ve basın yayın sektöründe
@@ -131,10 +322,12 @@
                                 doldurmak için kullanılır.</p>
                         </li>
                         <li>
-                            <div class="social2"><span><i class="fa-brands fa-instagram"></i></span><span><i
-                                        class="fa-brands fa-facebook-f"></i></span>
-                                <span><i class="fa-brands fa-linkedin-in"></i></span> <span><i
-                                        class="fa-light fa-envelope"></i></span>
+                            <div class="social2">
+                                <span><a href="" class="text-light"><i class="fa-brands fa-facebook-f"></i></a> </span>
+                                <span><a href="" class="text-light"><i class="fa-brands fa-instagram"></i></a></span>
+                                <span><a href="" class="text-light"><i class="fa-brands fa-linkedin-in"></i></a></span>
+                                <span><a href="mailto:nfo@yutucnc.com" class="text-light"><i
+                                            class="fa-light fa-envelope"></i></a></span>
                             </div>
                         </li>
                     </ul>
@@ -199,6 +392,9 @@
     <script>
         AOS.init();
     </script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/video.js@8.5.2/dist/video.min.js
+    "></script>
 </body>
 
 </html>

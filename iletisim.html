@@ -34,40 +34,38 @@
 </head>
 
 <body>
-
     <header class="danger">
         <div class="container">
             <div class="head row text-light" style="margin: 0 auto">
 
                 <div class="header-contact row">
-                    <div class="phone  col-md-6"><i class="fa-solid fa-phone"></i>
-                        <p>05427322615</p>
+                    <div class="phone  col-md-6"><i class="fa-light fa-phone"></i>
+                        <a href="tel:+05427322615" title="05427322615" class="text-light">05427322615</a>
                     </div>
                     <div class="mail  col-md-6"><i class="fa-sharp fa-light fa-envelope"></i>
-                        <p>info@yutucnc.com</p>
+                        <a href="mailto:info@yutucnc.com" title="info@yutucnc.com"
+                            class="text-light">info@yutucnc.com</a>
                     </div>
 
                 </div>
 
-                <div class="lang">
-                    <div class="dropdown danger">
-                        <div class="tr">
-                            <a href="#" class="text-light">TR</a>
-                        </div><i class="fa-solid fa-angle-down"></i>
-                        <div class="en danger">
-                            <a href="#" class="text-light">EN</a>
-                        </div>
-                    </div>
+                <div class="dropdown">
+                    <button class="btn danger text-light dropdown-toggle" data-bs-toggle="dropdown" type="button"
+                        id="dropdownMenuButton1" aria-expanded="false">
+                        TR
+                    </button>
+                    <ul class="dropdown-menu danger" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item text-light" style=" background: #E22C2C;" href="#">EN</a></li>
 
+                    </ul>
                 </div>
             </div>
-        </div>
     </header>
     <nav class="bg-dark">
         <div class="container">
             <div class="d-flex menu">
                 <div class="logo">
-                    <a href="/" title="Anasayfa"> <img src="images/yutu-logo-kırmızı.png" alt=" Logo"></a>
+                    <a href="" title="Anasayfa"> <img src="images/yutu-logo-kırmızı.png" alt=" Logo"></a>
                 </div>
                 <ul class="menu-items nav-links">
                     <li class="menu-item"><a href="" title="Anasafya">Anasafya</a></li>
@@ -75,7 +73,8 @@
                     <li class="menu-item"><a href="" title="Ürünlerimiz">Ürünlerimiz</a></li>
                     <li class="menu-item"><a href="" title="Blog">Blog</a></li>
                     <li class="menu-item"><a href="" title="İletişim">İletişim</a></li>
-                    <li class="menu-item"><i class="fa-thin fa-magnifying-glass text-light"></i></li>
+                    <li class="menu-item"><a href="#" onclick="showSearch()"><i
+                                class="fa-thin fa-magnifying-glass text-light"></i></a></li>
                 </ul>
 
             </div>
@@ -83,9 +82,10 @@
 
 
     </nav>
+
     <nav class="burger-menu">
         <div class="burger-container">
-            <input class="checkbox" type="checkbox" onclick="noscroll(appTimes, $(this))" name="" id="" />
+            <input class="checkbox" type="checkbox" onclick='noscroll()' name="" id="" />
             <div class="lines">
                 <span class="line line1"></span>
                 <span class="line line2"></span>
@@ -97,17 +97,24 @@
                 <li class="menuitems"><a href="" title="Ürünlerimiz">Ürünlerimiz</a></li>
                 <li class="menuitems"><a href="" title="Blog">Blog</a></li>
                 <li class="menuitems"><a href="" title="İletişim">İletişim</a></li>
-                <li class="menuitems"><i class="fa-thin fa-magnifying-glass text-light"></i></li>
+                <li class="menuitems"><a href="#" onclick="showSearch()"><i
+                            class="fa-thin fa-magnifying-glass text-light"></i></a></li>
             </ul>
         </div>
     </nav>
-
+    <div id="search-box" class="search">
+        <a href="#" onclick="hideSearch()"> <i class="fa-regular fa-xmark text-light"></i></a>
+        <div class="position-relative">
+            <input type="text" name="" id="" placeholder="Ara...">
+            <i class="fa-thin fa-magnifying-glass text-light"></i>
+        </div>
+    </div>
 
     <section>
         <div class="contact-banner">
             <div class="container">
                 <div class="content d-flex">
-                    <h1 class="text-light">İletişim</h1>
+                    <h1 class="text-light">İletişima</h1>
                     <span><small class="text-danger">Ana Sayfa</small><small class="text-light"> >>
                             İletişim</small></span>
                 </div>
@@ -147,7 +154,7 @@
             <div class="row">
                 <div class=" col-md-4 col-sm-12">
                     <ul>
-                        <li><img src="images/yutu-logo-beyaz.png" alt=""></li>
+                        <li><a href="/"><img class="mb-4" src="images/yutu-logo-beyaz.png" alt=""></a> </li>
                         <li>
                             <p>Lorem Ipsum, kısaca Lipsum, masaüstü
                                 yayıncılık ve basın yayın sektöründe
@@ -157,10 +164,12 @@
                                 doldurmak için kullanılır.</p>
                         </li>
                         <li>
-                            <div class="social2"><span><i class="fa-brands fa-instagram"></i></span><span><i
-                                        class="fa-brands fa-facebook-f"></i></span>
-                                <span><i class="fa-brands fa-linkedin-in"></i></span> <span><i
-                                        class="fa-light fa-envelope"></i></span>
+                            <div class="social2">
+                                <span><a href="" class="text-light"><i class="fa-brands fa-facebook-f"></i></a> </span>
+                                <span><a href="" class="text-light"><i class="fa-brands fa-instagram"></i></a></span>
+                                <span><a href="" class="text-light"><i class="fa-brands fa-linkedin-in"></i></a></span>
+                                <span><a href="mailto:nfo@yutucnc.com" class="text-light"><i
+                                            class="fa-light fa-envelope"></i></a></span>
                             </div>
                         </li>
                     </ul>

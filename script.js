@@ -2,9 +2,7 @@ $(':checkbox').change(noscroll);
 function noscroll() {
     $('body').toggleClass('no-scroll', !$(':checkbox').prop('checked'));
 
-    setTimeout(function () {
-        $('.burger-menu').toggleClass('hidden', !$(':checkbox').prop('unchecked'));
-    }, 500);
+
 }
 
 
@@ -43,7 +41,7 @@ $('.autoplay').slick({
     autoplaySpeed: 0,
     speed: 5000,
     loop: true,
-    infinite: true,    
+    infinite: true,
     autoplay: true,
     swipe: false,
     cssEase: 'linear',
@@ -65,20 +63,51 @@ $('.autoplay').slick({
 
         }
     },
-    {
-        breakpoint: 576,
-        settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
+  
+        {
+            breakpoint: 450,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
 
+            }
         }
-    },
-    {
-        breakpoint: 480,
-        settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-
-        }
-    }]
+    ]
 });
+$('.slider-for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 0,
+    arrows: false,
+    fade: true,
+    asNavFor: '.slider-nav'
+  });
+  $('.slider-nav').slick({
+    slidesToShow: 3,
+    slidesToScroll: 0,
+    asNavFor: '.slider-for',
+    dots: false,
+    centerMode: true,
+    focusOnSelect: true
+  });
+          
+
+const numberElements = document.querySelectorAll('.counter');
+
+if (numberElements) {
+    numberElements.forEach(function (numberElement) {
+        const targetNumber = parseInt(numberElement.dataset.number);
+        let startNumber = 0;
+
+        function counterUp() {
+            startNumber++;
+            numberElement.innerHTML = startNumber;
+
+            if (startNumber >= targetNumber) {
+                clearInterval(stop);
+            }
+        }
+        let stop = setInterval(function () {
+            counterUp();
+        }, 50);
+    });
+}
