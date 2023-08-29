@@ -7,6 +7,54 @@
       font-family: 'Rubik', sans-serif;
   }
 
+
+  #spinner {
+      padding-top: 20%;
+
+  }
+
+  @keyframes spin {
+      100% {
+          transform: rotate(360deg);
+      }
+  }
+
+  .inline {
+      display: flex;
+      background: #F6F1F1;
+      position: fixed;
+      width: 100%;
+      height: 7680px;
+      z-index: 9999;
+      justify-content: center;
+  }
+
+  .spinner i {
+      margin-top: 10px;
+      margin-left: 50px;
+      animation: spin 1s linear infinite;
+      color: #e22c2cc4;
+  }
+
+  body::-webkit-scrollbar {
+      width: 1em;
+      background: transparent;
+  }
+
+  body::-webkit-scrollbar-track {
+      height: 10%;
+      background-color: #a1a1a128;
+  }
+
+  body::-webkit-scrollbar-thumb {
+      background-color: #434242b0;
+      outline: 0;
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+      background: #e22c2cc4;
+  }
+
   .clear {
       clear: both;
       height: 2rem;
@@ -40,8 +88,7 @@
   }
 
   body.no-scroll {
-      overflow-y: scroll;
-      overflow-x: hidden;
+      overflow: hidden;
   }
 
 
@@ -71,46 +118,17 @@
       margin-bottom: 0 !important;
   }
 
-  .dropdown-menu {
-      max-width: 60px !important;
-      min-width: 100% !important;
-  }
 
-  .dropdown i {
-      margin-left: .4rem;
-      transition: all .4s;
-  }
-
-  .tr {
-      position: relative;
-      z-index: 2;
-  }
-
-  .en {
-      position: absolute;
-      top: -1.5rem;
-      transition: all .4s;
-      visibility: hidden;
-      z-index: -1;
-      padding: .5rem;
-      left: -7px;
-  }
-
-  /* .dropdown:hover .en {
-      visibility: visible;
-      top: 1.5rem;
-      z-index: 99;
-  }
-
-  .dropdown:hover i {
-      rotate: 180deg;
-  } */
   .dropdown-item {
 
       padding: .25rem 1rem !important;
 
   }
 
+  .dropdown-menu {
+      min-width: 2rem !important;
+
+  }
 
   .menu {
       flex-wrap: wrap;
@@ -143,13 +161,6 @@
       height: 0;
   }
 
-  .burger-menu {
-      padding: .5rem 0 .5rem 0;
-      height: 60px;
-      display: none;
-      background: #343a40;
-      position: relative;
-  }
 
   .menu-inventory {
       padding-top: 3rem;
@@ -163,6 +174,19 @@
       position: relative;
       z-index: 6;
       margin-top: -5rem;
+  }
+
+  .checkbox,
+  .lines {
+      display: none;
+  }
+
+  .menuitems a {
+      color: #B9B9B9;
+
+      display: inline-block;
+      position: relative;
+      padding: 1rem;
   }
 
   .menuitems a {
@@ -202,6 +226,7 @@
       margin-bottom: 15rem;
       width: 280px;
       font-size: 1.85rem;
+      padding-right: 3rem;
   }
 
   .search i.fa-magnifying-glass {
@@ -223,7 +248,7 @@
   }
 
   .lines {
-      display: block;
+      display: none;
       height: 26px;
       width: 32px;
       position: absolute;
@@ -231,14 +256,13 @@
       bottom: 0;
       right: 35px;
       z-index: 7;
-      display: flex;
       flex-direction: column;
       justify-content: space-between;
   }
 
   input[type="checkbox"] {
       position: absolute;
-      display: block;
+      display: none;
       height: 32px;
       width: 32px;
       top: 14px;
@@ -270,7 +294,7 @@
       transition: transform 0.4s ease-in-out;
   }
 
-  input[type="checkbox"]:checked~.menu-inventory {
+  input[type="checkbox"]:checked~.menu-items {
       transform: translateX(0);
   }
 
@@ -466,7 +490,6 @@
   a.danger:hover {
       scale: 1.1;
       box-shadow: inset 0 0 0 2em color(srgb 255 255 255), 0 0 20px 1px rgba(255, 0, 0, 1);
-      border-radius: 10px;
       color: red !important;
 
   }
@@ -578,7 +601,7 @@
   }
 
   .last-blogs.row {
-      height: 450px;
+      height: 470px;
   }
 
   .last-blogs .card-body {
@@ -595,6 +618,15 @@
       -webkit-box-orient: vertical;
   }
 
+  h6,
+  h5,
+  h4 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+  }
+
   .card {
       transition: all .4s;
       cursor: pointer;
@@ -606,7 +638,7 @@
   }
 
   .card:hover .btn {
-      bottom: 1rem;
+      bottom: .5rem;
   }
 
   .card:hover .card-body {
@@ -690,6 +722,12 @@
       transition: all .2s;
   }
 
+  footer span a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
   footer a {
       font-size: .85rem;
   }
@@ -726,9 +764,12 @@
       padding: 0.65rem 0.65rem;
       border-radius: 100%;
       max-width: 50px;
-      max-height: 50px;
+      display: flex;
+      height: 50px;
       text-align: center;
       transition: all .4s;
+      align-items: center;
+      justify-content: center;
   }
 
   .social2 span:hover {
@@ -779,10 +820,12 @@
   .contact-form form div input,
   .contact-form form div textarea {
       border-radius: 10px;
-      border: 1px solid black;
+      border: 1px solid #e6e6e62b;
+      background: #e6e6e62b;
       padding: .5rem 1rem;
       width: 100%;
       max-height: 162px;
+      outline: 0;
   }
 
   .contact-form form div input.danger.text-light {
@@ -791,9 +834,9 @@
       border: 0;
   }
 
-  .contact-form form div input:focus-visible {
+  .contact-form form div input:focus-visible,
+  textarea:focus-visible {
       border: 1px solid #E22C2B;
-      outline-color: #E22C2B;
   }
 
   .contact-form form {
@@ -809,6 +852,11 @@
       border: 2px solid #E6E6E6;
       border-radius: 10px;
       padding: 0.5rem 1.25rem;
+      cursor: pointer;
+  }
+
+  .autoplay img:hover {
+      border: 2px solid #E22C2B;
   }
 
   .danger.w-100.position-absolute {
@@ -932,6 +980,7 @@
       background: transparent;
   }
 
+
   .row.blogs-page .card-body {
       overflow: hidden;
       position: relative;
@@ -994,7 +1043,7 @@
       max-width: 50px;
       border-radius: 100%;
       text-align: center;
-     
+
       font-size: 1.7rem;
       transition: all .4s;
       border: 1px solid #000;
@@ -1019,6 +1068,34 @@
       color: #000;
   }
 
+  .clickable {
+      color: gray;
+      cursor: pointer;
+      text-decoration: underline;
+      position: relative;
+      z-index: 1;
+      transition: all .4s;
+      text-underline-offset: .95rem;
+      text-decoration-thickness: 0.01rem;
+      text-decoration-color: #E6E6E6;
+  }
+
+  .selected {
+      color: #E22C2C;
+      text-decoration-color: #e22c2c6e;
+
+  }
+
+  .top hr {
+      margin-top: .5rem;
+  }
+
+  .same-product {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 2rem;
+  }
+
   @media only screen and (max-width:1200px) {
       .product {
 
@@ -1027,6 +1104,11 @@
 
       .social2 {
           grid-template-columns: repeat(4, 1fr);
+      }
+
+      .card-body p {
+
+          -webkit-line-clamp: 3;
       }
   }
 
@@ -1038,7 +1120,12 @@
       }
 
       .last-blogs.row {
-          height: 790px;
+          height: 900px;
+          row-gap: 1rem;
+      }
+
+      .card.rounded {
+          height: 100%;
       }
 
       .header-contact div {
@@ -1050,6 +1137,11 @@
           grid-template-columns: repeat(2, 1fr);
           row-gap: 1rem;
           column-gap: 1rem;
+      }
+
+      .same-product {
+          grid-template-columns: repeat(2, 1fr);
+          row-gap: 2rem;
       }
 
       .slide {
@@ -1077,6 +1169,16 @@
           margin: 1rem auto;
           margin-top: 0;
       }
+
+      .last-blogs .card-body,
+      .card:hover .card-body {
+
+          height: auto;
+      }
+
+      .card .btn {
+          position: static;
+      }
   }
 
 
@@ -1097,8 +1199,54 @@
   }
 
   @media only screen and (max-width:768px) {
-      nav.bg-dark>div {
-          display: none;
+
+      .burger-menu {
+          padding: .5rem 0 .5rem 0;
+          height: 100px;
+          background: #343a40;
+          position: relative;
+      }
+
+
+
+      nav .container {
+          padding: .5rem 0;
+          height: 88px;
+          display: block;
+          background: #343a40;
+          position: static;
+      }
+
+      .menu-item:hover {
+          border-bottom: 0;
+      }
+
+      input[type="checkbox"],
+      .lines {
+          display: flex;
+          right: 8.5rem;
+          top: 40%;
+      }
+
+      .menu-items {
+          padding-top: 3rem;
+          width: 100%;
+          height: 120vh;
+          transform: translate(-150%);
+          transition: transform 0.5s ease-in-out;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          position: absolute;
+          z-index: 6;
+          margin-top: -5rem;
+          top: 0;
+          left: 0;
+      }
+
+
+      .menuitems a:hover {
+          color: #fff;
       }
 
       .counters .item {
@@ -1118,9 +1266,13 @@
           display: grid;
       }
 
-      .burger-menu {
-          display: block;
+      .last-blogs.row {
+          height: 1700px;
+      }
 
+      .card.rounded {
+          height: 100%;
+          max-height: 510px;
       }
 
       .slider-section .slick-dots {
@@ -1148,15 +1300,8 @@
           margin: 1rem 0;
       }
 
-      .card .btn {
-          position: static;
-      }
 
-      .last-blogs .card-body,
-      .card:hover .card-body {
 
-          height: auto;
-      }
 
       .overlay .container .slide img {
           right: 0rem !important;
@@ -1206,11 +1351,45 @@
       }
   }
 
+  @media only screen and (max-width:700px) {
 
+      input[type="checkbox"],
+      .lines {
+          right: 6rem;
+      }
+  }
+
+  @media only screen and (max-width:687px) {
+
+      input[type="checkbox"],
+      .lines {
+          right: 5rem;
+      }
+  }
+
+  @media only screen and (max-width:600px) {
+
+      input[type="checkbox"],
+      .lines {
+          right: 4rem;
+      }
+  }
 
   @media only screen and (max-width:576px) {
       .head {
           max-width: 480px;
+      }
+
+      input[type="checkbox"],
+      .lines {
+          display: flex;
+          right: 3.25rem;
+          top: 40%;
+      }
+
+      .menu {
+          max-width: 490px;
+          margin: 0 auto;
       }
 
       .overlay .content {
@@ -1239,7 +1418,7 @@
       }
 
       .social {
-          top: 17%;
+          top: 22%;
       }
 
       .social div a {
@@ -1248,12 +1427,28 @@
 
       }
 
-
+      .contact-form {
+          margin: 0 0 4rem 0;
+      }
   }
 
   @media only screen and (max-width:560px) {
       .slider-section .slick-dots {
           padding: 0 10px;
+      }
+  }
+
+  @media only screen and (max-width:500px) {
+      .menu {
+          max-width: 450px;
+          margin: 0 auto;
+      }
+
+      input[type="checkbox"],
+      .lines {
+
+          right: 2.25rem;
+
       }
   }
 
@@ -1265,6 +1460,16 @@
       .header-contact {
           flex-direction: column;
           align-items: start;
+      }
+
+      input[type="checkbox"],
+      .lines {
+          right: 5.75rem;
+      }
+
+      .menu {
+          max-width: 332px;
+          margin: 0 auto;
       }
 
       .social div a {
@@ -1287,19 +1492,72 @@
           right: 1rem;
           align-items: flex-end;
       }
+
+      .same-product {
+          grid-template-columns: repeat(1, 1fr);
+      }
+
+      .card.rounded {
+          height: 100%;
+          max-height: 470px;
+      }
+
   }
 
+
+  @media only screen and (max-width:440px) {
+
+      input[type="checkbox"],
+      .lines {
+          right: 4.75rem;
+      }
+  }
+
+  @media only screen and (max-width:400px) {
+
+      input[type="checkbox"],
+      .lines {
+          right: 3.45rem;
+      }
+
+      .social {
+          top: 20%;
+      }
+  }
 
   @media only screen and (max-width:360px) {
       .social div a {
           width: 30px;
           height: 30px;
       }
+
+      input[type="checkbox"],
+      .lines {
+          right: 2rem;
+      }
+
+      .card.rounded {
+          max-height: 400px;
+      }
+
+      .last-blogs.row {
+          height: 1400px;
+      }
   }
 
   @media only screen and (max-width:320px) {
       .header h1.text-light {
           font-size: 1rem;
+      }
+
+      .menu {
+          max-width: 310px;
+          margin: 0 auto;
+      }
+
+      input[type="checkbox"],
+      .lines {
+          right: 2rem;
       }
 
       .contact-us button {
@@ -1319,7 +1577,7 @@
       }
 
       .social {
-          top: 20%;
+          top: 25%;
 
           right: 1rem;
 

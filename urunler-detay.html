@@ -1,9 +1,8 @@
 <!doctype html>
-<html lang="">
+<html lang="tr">
 
 <head>
     <title>Title</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="style.css">
@@ -33,7 +32,10 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body>
+<body>  <div class="inline">
+    <p class="spinner" id="spinner"><i class="fa fa-spinner fa-5x"></i></p>
+</div>
+
     <header class="danger">
         <div class="container">
             <div class="head row text-light" style="margin: 0 auto">
@@ -61,18 +63,24 @@
                 </div>
             </div>
     </header>
-    <nav class="bg-dark">
+    <nav class="bg-dark burger-menu">
         <div class="container">
             <div class="d-flex menu">
                 <div class="logo">
                     <a href="" title="Anasayfa"> <img src="images/yutu-logo-kırmızı.png" alt=" Logo"></a>
                 </div>
-                <ul class="menu-items nav-links">
-                    <li class="menu-item"><a href="" title="Anasafya">Anasafya</a></li>
-                    <li class="menu-item"><a href="" title="Hakkımızda">Hakkımızda</a></li>
-                    <li class="menu-item"><a href="" title="Ürünlerimiz">Ürünlerimiz</a></li>
-                    <li class="menu-item"><a href="" title="Blog">Blog</a></li>
-                    <li class="menu-item"><a href="" title="İletişim">İletişim</a></li>
+                <input class="checkbox" type="checkbox" onclick='noscroll()' name="" id="" />
+                <div class="lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+                <ul class="menu-items bg-dark nav-links">
+                    <li class="menu-item"><a href="/index.html" title="Anasafya">Anasafya</a></li>
+                    <li class="menu-item"><a href="/hakkimizda.html" title="Hakkımızda">Hakkımızda</a></li>
+                    <li class="menu-item"><a href="/urunler.html" title="Ürünlerimiz">Ürünlerimiz</a></li>
+                    <li class="menu-item"><a href="/blog.html" title="Blog">Blog</a></li>
+                    <li class="menu-item"><a href="/iletisim.html" title="İletişim">İletişim</a></li>
                     <li class="menu-item"><a href="#" onclick="showSearch()"><i
                                 class="fa-thin fa-magnifying-glass text-light"></i></a></li>
                 </ul>
@@ -83,25 +91,6 @@
 
     </nav>
 
-    <nav class="burger-menu">
-        <div class="burger-container">
-            <input class="checkbox" type="checkbox" onclick='noscroll()' name="" id="" />
-            <div class="lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </div>
-            <ul class="menu-inventory bg-dark">
-                <li class="menuitems"><a href="" title="Anasafya">Anasafya</a></li>
-                <li class="menuitems"><a href="" title="Hakkımızda">Hakkımızda</a></li>
-                <li class="menuitems"><a href="" title="Ürünlerimiz">Ürünlerimiz</a></li>
-                <li class="menuitems"><a href="" title="Blog">Blog</a></li>
-                <li class="menuitems"><a href="" title="İletişim">İletişim</a></li>
-                <li class="menuitems"><a href="#" onclick="showSearch()"><i
-                            class="fa-thin fa-magnifying-glass text-light"></i></a></li>
-            </ul>
-        </div>
-    </nav>
     <div id="search-box" class="search">
         <a href="#" onclick="hideSearch()"> <i class="fa-regular fa-xmark text-light"></i></a>
         <div class="position-relative">
@@ -152,45 +141,73 @@
                     </div>
                 </div>
             </div>
-            <div>
-              <div class="top border-bottom">
-                
-              </div>
+            <div class="mt-5 mb-5">
+                <div class="top">
+                    <p id="tanim" class="d-inline clickable">Tanım</p>
+                    <p id="ek-bilgi" class="d-inline clickable ml-2">Ek Bilgiler</p>
+                    <p id="inceleme" class="d-inline clickable ml-2">İncelemeler</p>
+                    <hr>
+                </div>
+                <div class="bottom">
+                    <p id="tanim-title" class="d-none">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                        fermentum,
+                        diam non iaculis finibus, ipsum arcu sollicitudin dolor, ut cursus
+                        sapien sem sed purus. Donec vitae fringilla tortor, sed fermentum nunc. Suspendisse sodales
+                        turpis dolor, at rutrum dolor tristique id. Quisque
+                        pellentesque ullamcorper felis, eget gravida mi elementum a. Maecenas consectetur volutpat ante,
+                        sit amet molestie urna luctus in. Nulla eget
+                        dolor semper urna malesuada dictum. Duis eleifend pellentesque dui et finibus. Pellentesque
+                        dapibus dignissim augue. Etiam odio est, sodales
+                        ac aliquam id, iaculis eget lacus. Aenean porta, ante vitae suscipit pulvinar, purus dui
+                        interdum tellus, sed dapibus mi mauris vitae tellus.</p>
+                    <p id="ek-title" class="d-none">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                        fermentum,
+                        diam non iaculis finibus, ipsum arcu sollicitudin dolor, ut cursus
+                        sapien sem sed purus. Donec vitae fringilla tortor, sed fermentum nunc. Suspendisse sodales
+                        turpis dolor, at rutrum dolor tristique id. Quisque
+                        pellentesque ullamcorper felis, eget gravida mi elementum a. Maecenas consectetur volutpat ante,
+                        sit amet molestie urna luctus in. Nulla eget
+                        dolor semper urna malesuada dictum. Duis eleifend pellentesque dui et finibus. Pellentesque
+                        dapibus dignissim augue. Etiam odio est, sodales
+                        ac aliquam id, iaculis eget lacus. Aenean porta, ante vitae suscipit pulvinar, purus dui
+                        interdum tellus, sed dapibus mi mauris vitae tellus.</p>
+
+                    <p id="inceleme-title" class="d-none">
+                        açıklama. açıklama. açıklama. açıklama. açıklama. açıklama. açıklama. açıklama. açıklama.
+                        açıklama. açıklama. açıklama. açıklama. açıklama. açıklama. açıklama. açıklama. açıklama.
+                        açıklama. açıklama. açıklama. açıklama. açıklama. açıklama. açıklama. açıklama. açıklama.</p>
+                </div>
             </div>
             <div>
                 <h2>Benzer Ürünler</h2>
-                <div class="row same-product">
-                    <div class="col-md-3 col-sm-12">
-                        <div class="product-card"> <a href="">
-                                <img src="images/pngwing.com.png" alt="">
-                                <p>Difransiyel</p>
-                                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                            </a>
-                        </div>
+                <div class="same-product">
+
+                    <div class="product-card"> <a href="">
+                            <img src="images/pngwing.com.png" alt="">
+                            <p>Difransiyel</p>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
                     </div>
-                    <div class="col-md-3 col-sm-12">
-                        <div class="product-card"> <a href="">
-                                <img src="images/pngwing.com.png" alt="">
-                                <p>Difransiyel</p>
-                                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                            </a>
-                        </div>
+
+
+                    <div class="product-card"> <a href="">
+                            <img src="images/pngwing.com.png" alt="">
+                            <p>Difransiyel</p>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
                     </div>
-                    <div class="col-md-3 col-sm-12">
-                        <div class="product-card"> <a href="">
-                                <img src="images/pngwing.com.png" alt="">
-                                <p>Difransiyel</p>
-                                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                            </a>
-                        </div>
+                    <div class="product-card"> <a href="">
+                            <img src="images/pngwing.com.png" alt="">
+                            <p>Difransiyel</p>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
                     </div>
-                    <div class="col-md-3 col-sm-12">
-                        <div class="product-card"> <a href="">
-                                <img src="images/pngwing.com.png" alt="">
-                                <p>Difransiyel</p>
-                                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                            </a>
-                        </div>
+
+                    <div class="product-card"> <a href="">
+                            <img src="images/pngwing.com.png" alt="">
+                            <p>Difransiyel</p>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -253,10 +270,10 @@
                             <h5>Hızlı Linkler</h5>
                         </li>
                         <li><a href="/" title="Anasafya">AnaSayfa</a></li>
-                        <li><a href="/hakkimizda" title="Hakkımızda">Hakkımızda</a></li>
-                        <li><a href="/urunler" title="Ürünlerimiz">Ürünlerimiz</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/iletisim" title="İletişim"></a></li>
+                        <li><a href="/hakkimizda.html" title="Hakkımızda">Hakkımızda</a></li>
+                        <li><a href="/urunler.html" title="Ürünlerimiz">Ürünlerimiz</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/iletisim.html" title="İletişim"></a></li>
                     </ul>
                 </div>
 
@@ -298,6 +315,22 @@
             </div>
         </div>
     </footer>
+    <script>const elements = document.querySelectorAll('.clickable');
+        const titles = document.querySelectorAll('.bottom p');
+
+        elements.forEach((element, index) => {
+            element.addEventListener('click', () => {
+                elements.forEach(el => el.classList.remove('selected'));
+                titles.forEach(title => title.classList.add('d-none'));
+
+                element.classList.add('selected');
+                titles[index].classList.remove('d-none');
+                localStorage.setItem('selectedColor', element.innerText);
+            });
+        });
+
+        const tanimElement = document.getElementById('tanim');
+        tanimElement.click();</script>
     <script src="script.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"

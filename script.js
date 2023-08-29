@@ -1,11 +1,23 @@
-$(':checkbox').change(noscroll);
+$(':checkbox').on('click', function() {
+    noscroll();
+});
+
 function noscroll() {
-    $('body').toggleClass('no-scroll', !$(':checkbox').prop('checked'));
-
-
+    $('body').toggleClass('no-scroll', $(':checkbox').prop('checked'));
 }
-
-
+document.onreadystatechange = function () {
+    if (document.readyState !== "complete") {
+      document.querySelector(
+        "body").style.visibility = "hidden";
+      document.querySelector(
+        "#spinner").style.visibility = "visible";
+    } else {
+    document.querySelector(
+        ".inline").style.display = "none";
+      document.querySelector(
+        "body").style.visibility = "visible";
+    }
+  };
 
 var body = document.getElementsByTagName("body")[0]
 
@@ -45,7 +57,7 @@ $('.autoplay').slick({
     autoplay: true,
     swipe: false,
     cssEase: 'linear',
-    pauseOnHover: false,
+
     dots: false,
     arrows: false,
     responsive: [{}, {
@@ -92,22 +104,64 @@ $('.slider-for').slick({
           
 
 const numberElements = document.querySelectorAll('.counter');
+const duration = 2000; // Animasyon süresi (ms)
 
 if (numberElements) {
-    numberElements.forEach(function (numberElement) {
-        const targetNumber = parseInt(numberElement.dataset.number);
-        let startNumber = 0;
+    let startTime;
 
-        function counterUp() {
-            startNumber++;
-            numberElement.innerHTML = startNumber;
-
-            if (startNumber >= targetNumber) {
-                clearInterval(stop);
-            }
+    function animate(timestamp) {
+        if (!startTime) {
+            startTime = timestamp;
         }
-        let stop = setInterval(function () {
-            counterUp();
-        }, 50);
-    });
+
+        const elapsedTime = timestamp - startTime;
+        const progress = Math.min(elapsedTime / duration, 1);
+
+        numberElements.forEach(function (numberElement) {
+            const targetNumber = parseInt(numberElement.dataset.number);
+            const currentValue = Math.round(targetNumber * progress);
+            numberElement.innerHTML = currentValue;
+        });
+
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    requestAnimationFrame(animate);
 }
+
+
+
+
+// const elements = document.querySelectorAll('.clickable');
+// const titles = document.querySelectorAll('.bottom p');
+
+// const savedColor = localStorage.getItem('selectedColor');
+// if (savedColor) {
+//   elements.forEach(element => {
+//     element.classList.remove('selected');
+//   });
+//   const selectedElement = Array.from(elements).find(element => element.innerText === savedColor);
+//   if (selectedElement) {
+//     selectedElement.classList.add('selected');
+//     titles.forEach(title => title.classList.add('d-none'));
+//     titles[Array.from(elements).indexOf(selectedElement)].classList.remove('d-none');
+//   }
+// } else {
+//   elements[0].classList.add('selected');
+//   localStorage.setItem('selectedColor', elements[0].innerText);
+//   titles[0].classList.remove('d-none');
+// }
+
+// elements.forEach((element, index) => {
+//   element.addEventListener('click', () => {
+//     elements.forEach(el => el.classList.remove('selected'));
+//     titles.forEach(title => title.classList.add('d-none'));
+    
+//     element.classList.add('selected');
+//     titles[index].classList.remove('d-none');
+//     localStorage.setItem('selectedColor', element.innerText);
+//   });
+// });
+

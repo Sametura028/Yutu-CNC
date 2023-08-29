@@ -34,6 +34,10 @@
 </head>
 
 <body>
+    <div class="inline">
+        <p class="spinner" id="spinner"><i class="fa fa-spinner fa-5x"></i></p>
+ </div>
+
     <header class="danger">
         <div class="container">
             <div class="head row text-light" style="margin: 0 auto">
@@ -61,18 +65,24 @@
                 </div>
             </div>
     </header>
-    <nav class="bg-dark">
+    <nav class="bg-dark burger-menu">
         <div class="container">
             <div class="d-flex menu">
                 <div class="logo">
                     <a href="" title="Anasayfa"> <img src="images/yutu-logo-kırmızı.png" alt=" Logo"></a>
                 </div>
-                <ul class="menu-items nav-links">
-                    <li class="menu-item"><a href="" title="Anasafya">Anasafya</a></li>
-                    <li class="menu-item"><a href="" title="Hakkımızda">Hakkımızda</a></li>
-                    <li class="menu-item"><a href="" title="Ürünlerimiz">Ürünlerimiz</a></li>
-                    <li class="menu-item"><a href="" title="Blog">Blog</a></li>
-                    <li class="menu-item"><a href="" title="İletişim">İletişim</a></li>
+                <input class="checkbox" type="checkbox" onclick='noscroll()' name="" id="" />
+                <div class="lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+                <ul class="menu-items bg-dark nav-links">
+                    <li class="menu-item"><a href="/index.html" title="Anasafya">Anasafya</a></li>
+                    <li class="menu-item"><a href="/hakkimizda.html" title="Hakkımızda">Hakkımızda</a></li>
+                    <li class="menu-item"><a href="/urunler.html" title="Ürünlerimiz">Ürünlerimiz</a></li>
+                    <li class="menu-item"><a href="/blog.html" title="Blog">Blog</a></li>
+                    <li class="menu-item"><a href="/iletisim.html" title="İletişim">İletişim</a></li>
                     <li class="menu-item"><a href="#" onclick="showSearch()"><i
                                 class="fa-thin fa-magnifying-glass text-light"></i></a></li>
                 </ul>
@@ -83,25 +93,6 @@
 
     </nav>
 
-    <nav class="burger-menu">
-        <div class="burger-container">
-            <input class="checkbox" type="checkbox" onclick='noscroll()' name="" id="" />
-            <div class="lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </div>
-            <ul class="menu-inventory bg-dark">
-                <li class="menuitems"><a href="" title="Anasafya">Anasafya</a></li>
-                <li class="menuitems"><a href="" title="Hakkımızda">Hakkımızda</a></li>
-                <li class="menuitems"><a href="" title="Ürünlerimiz">Ürünlerimiz</a></li>
-                <li class="menuitems"><a href="" title="Blog">Blog</a></li>
-                <li class="menuitems"><a href="" title="İletişim">İletişim</a></li>
-                <li class="menuitems"><a href="#" onclick="showSearch()"><i
-                            class="fa-thin fa-magnifying-glass text-light"></i></a></li>
-            </ul>
-        </div>
-    </nav>
     <div id="search-box" class="search">
         <a href="#" onclick="hideSearch()"> <i class="fa-regular fa-xmark text-light"></i></a>
         <div class="position-relative">
@@ -122,10 +113,10 @@
         </div>
     </section>
 
-    <section>
+    <section class="mb-5">
         <div class="container">
             <h2 class="text-center mt-5">Bize Ulaşın</h2>
-            <div class="contact-form row mt-2 mb-5">
+            <div class="contact-form row">
                 <div class="col-md-6 col-sm-6">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12023.120304786453!2d28.9935241!3d41.1174939!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab56d8902bc19%3A0xa9fdbd7b5cc4f00a!2sDigiMondi!5e0!3m2!1str!2str!4v1692705031879!5m2!1str!2str"
@@ -180,10 +171,10 @@
                             <h5>Hızlı Linkler</h5>
                         </li>
                         <li><a href="/" title="Anasafya">AnaSayfa</a></li>
-                        <li><a href="/hakkimizda" title="Hakkımızda">Hakkımızda</a></li>
-                        <li><a href="/urunler" title="Ürünlerimiz">Ürünlerimiz</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/iletisim" title="İletişim"></a></li>
+                        <li><a href="/hakkimizda.html" title="Hakkımızda">Hakkımızda</a></li>
+                        <li><a href="/urunler.html" title="Ürünlerimiz">Ürünlerimiz</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/iletisim.html" title="İletişim"></a></li>
                     </ul>
                 </div>
 
